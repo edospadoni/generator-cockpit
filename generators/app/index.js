@@ -61,7 +61,8 @@ module.exports = class extends Generator {
     this.fs.copyTpl(
       this.templatePath('_package.json'),
       this.destinationPath('package.json'), {
-        name: this.name
+        name: this.name,
+        description: this.description
       }
     );
     this.fs.copy(
@@ -88,9 +89,12 @@ module.exports = class extends Generator {
       this.templatePath('_.jshintrc'),
       this.destinationPath('.jshintrc')
     );
-    this.fs.copy(
+    this.fs.copyTpl(
       this.templatePath('_README.md'),
-      this.destinationPath('README.md')
+      this.destinationPath('README.md'), {
+        name: this.name,
+        description: this.description
+      }
     );
 
     // app
