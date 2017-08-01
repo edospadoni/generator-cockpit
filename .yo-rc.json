@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Edoardo Spadoni",
+      "authorEmail": "edoardo.spadoni@nethesis.it",
+      "authorUrl": "https://edospadoni.github.io"
+    }
+  }
+}
