@@ -7,6 +7,11 @@ version 0.16.0.
 
 ## Development
 
+Install all needed stuffs:
+```
+npm install -g grunt-cli bower
+```
+
 Run this to sync your local data into remote host path:
 ```
 grunt sync:_USER_@_DOMAIN_:_PORT_:_FULL_PATH
