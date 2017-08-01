@@ -97,7 +97,7 @@ module.exports = class extends Generator {
       }
     );
 
-    // app
+    // images
     this.fs.copy(
       this.templatePath('_app/_images/_yeoman.png'),
       this.destinationPath('app/images/yeoman.png')
@@ -153,6 +153,28 @@ module.exports = class extends Generator {
       this.destinationPath('app/index.html'), {
         name: this.name
       }
+    );
+
+    // cockpit stuff
+    this.fs.copy(
+      this.templatePath('_base1/_cockpit.js'),
+      this.destinationPath('app/base1/cockpit.js')
+    );
+    this.fs.copy(
+      this.templatePath('_base1/_jquery.js'),
+      this.destinationPath('app/base1/jquery.js')
+    );
+    this.fs.copy(
+      this.templatePath('_base1/_patternfly.css'),
+      this.destinationPath('app/base1/patternfly.css')
+    );
+    this.fs.copy(
+      this.templatePath('_base1/_fonts/_OpenSans-Regular-webfont.woff'),
+      this.destinationPath('app/static/fonts/OpenSans-Regular-webfont.woff')
+    );
+    this.fs.copy(
+      this.templatePath('_base1/_fonts/_OpenSans-Light-webfont.woff'),
+      this.destinationPath('app/static/fonts/OpenSans-Light-webfont.woff')
     );
   }
 

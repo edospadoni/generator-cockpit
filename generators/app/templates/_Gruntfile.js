@@ -371,29 +371,23 @@ module.exports = function (grunt) {
         'imagemin',
         'svgmin'
       ]
+    },
+
+    shell: {
+      sync: {
+        //command: (login, path, port) => "watch -n1 rsync -avz --delete -e 'ssh -p " + (port ? port : '22') + "' app/* " + login + ':' + path
+        command: function (login, port, path, all) {
+          var commands = [];
+          commands.push("rsync -avz --delete -e 'ssh -p " + (port ? port : '22') + "' app/* " + login + ':' + path);
+          // copy also the bower_components...only for developing
+          if (all !== "undefined") {
+            commands.push("rsync -avz --delete -e 'ssh -p " + (port ? port : '22') + "' bower_components " + login + ':' + path);
+          }
+          return commands.join(';');
+        }
+      }
     }
 
-  });
-
-
-  grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
-    if (target === 'dist') {
-      return grunt.task.run(['build', 'connect:dist:keepalive']);
-    }
-
-    grunt.task.run([
-      'clean:server',
-      'wiredep',
-      'concurrent:server',
-      'postcss:server',
-      'connect:livereload',
-      'watch'
-    ]);
-  });
-
-  grunt.registerTask('server', 'DEPRECATED TASK. Use the "serve" task instead', function (target) {
-    grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
-    grunt.task.run(['serve:' + target]);
   });
 
   grunt.registerTask('build', [
@@ -414,9 +408,9 @@ module.exports = function (grunt) {
     'htmlmin'
   ]);
 
-  grunt.registerTask('default', [
-    'newer:jshint',
-    'newer:jscs',
-    'build'
-  ]);
+  grunt.registerTask('sync', 'Sync folder with remote host', function (login, port, path, all) {
+    grunt.task.run([
+      'shell:sync:' + login + ':' + port + ':' + path + ':' + all
+    ]);
+  });
 };
