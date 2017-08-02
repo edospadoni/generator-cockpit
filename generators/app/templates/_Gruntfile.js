@@ -378,7 +378,7 @@ module.exports = function (grunt) {
         //command: (login, path, port) => "watch -n1 rsync -avz --delete -e 'ssh -p " + (port ? port : '22') + "' app/* " + login + ':' + path
         command: function (login, port, path, all) {
           var commands = [];
-          commands.push("rsync -avz --delete -e 'ssh -p " + (port ? port : '22') + "' app/* " + login + ':' + path);
+          commands.push("rsync -avz --delete -e 'ssh -p " + (port ? port : '22') + "' manifest.json app/* " + login + ':' + path);
           // copy also the bower_components...only for developing
           if (all !== "undefined") {
             commands.push("rsync -avz --delete -e 'ssh -p " + (port ? port : '22') + "' bower_components " + login + ':' + path);
