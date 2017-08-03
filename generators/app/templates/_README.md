@@ -24,11 +24,11 @@ watch -n1 grunt sync:root@mydomain.com:2222:.local/share/cockpit/mycoolmodule/ -
 
 When you developing, sync also all the `bower_components` folder each time a new dependencies is installed, you can sync with:
 ```
-grunt sync:_USER_@_DOMAIN_:_PORT_:_FULL_PATH:true
+grunt sync:_USER_@_DOMAIN_:_PORT_:_FULL_PATH:all
 ```
 Like above:
 ```
-grunt sync:root@mydomain.com:2222:.local/share/cockpit/mycoolmodule/:true
+grunt sync:root@mydomain.com:2222:.local/share/cockpit/mycoolmodule/:all
 ```
 
 ## Build
