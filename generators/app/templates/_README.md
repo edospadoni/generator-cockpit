@@ -6,9 +6,9 @@ This project is generated with [yo cockpit generator](https://github.com/edospad
 
 ## Development
 
-Install all needed stuffs:
+Install generator angular to scaffold AngularJS stuffs:
 ```
-npm install -g grunt-cli bower generator-angular
+npm install -g generator-angular
 ```
 
 You can use the yeoman [generator-angular](https://github.com/yeoman/generator-angular) to create all AngularJS stuffs like `routes`, `controllers`, `directives`, etc.
