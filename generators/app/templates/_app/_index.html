@@ -25,7 +25,7 @@
 
   <!-- Add your site or application content here -->
   <div class="header">
-    <h2>Header</h2>
+    <h2 ng-bind="Header"></h2>
   </div>
 
   <div class="cont">
@@ -47,6 +47,7 @@
 
   <script src="../base1/jquery.js"></script>
   <script src="../base1/cockpit.js"></script>
+  <script src="../ns-base1/nethserver.js"></script>
   <!-- <script src="../*/po.js"></script> -->
 
   <!-- build:js({.tmp,app}) scripts/scripts.js -->
@@ -54,6 +55,7 @@
   <script src="scripts/controllers/main.js"></script>
   <script src="scripts/services/moduleservice.js"></script>
   <script src="scripts/directives/mydirective.js"></script>
+  <script src="scripts/filters/translate.js"></script>
   <script src="scripts/filters/myfilter.js"></script>
   <!-- endbuild -->
 </body>

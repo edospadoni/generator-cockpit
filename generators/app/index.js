@@ -134,6 +134,12 @@ module.exports = class extends Generator {
         name: this.name
       }
     );
+    this.fs.copyTpl(
+      this.templatePath('_app/_scripts/_filters/_translate.js'),
+      this.destinationPath('app/scripts/filters/translate.js'), {
+        name: this.name
+      }
+    );
 
     // styles
     this.fs.copy(

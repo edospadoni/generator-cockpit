@@ -16,7 +16,8 @@ module.exports = function (grunt) {
   require('jit-grunt')(grunt, {
     useminPrepare: 'grunt-usemin',
     ngtemplates: 'grunt-angular-templates',
-    cdnify: 'grunt-google-cdn'
+    cdnify: 'grunt-google-cdn',
+    i18nextract: 'grunt-angular-translate'
   });
 
   // Configurable paths for the application
@@ -385,6 +386,16 @@ module.exports = function (grunt) {
           }
           return commands.join(';');
         }
+      }
+    },
+
+    i18nextract: {
+      default_options: {
+        src: ['app/**/*.html'],
+        lang: ['en_US'],
+        dest: 'pots',
+        prefix: 'en_US',
+        adapter: 'pot'
       }
     }
 
