@@ -6,9 +6,9 @@ This project is generated with [yo cockpit generator](https://github.com/edospad
 
 ## Development
 
-Install generator angular to scaffold AngularJS stuffs:
+Install `generator angular` and `bower` to scaffold AngularJS stuffs:
 ```
-npm install -g generator-angular
+npm install -g generator-angular bower
 ```
 
 You can use the yeoman [generator-angular](https://github.com/yeoman/generator-angular) to create all AngularJS stuffs like `routes`, `controllers`, `directives`, etc.
